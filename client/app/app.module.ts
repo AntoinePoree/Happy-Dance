@@ -18,6 +18,8 @@ import { AccountComponent } from './account/account.component';
 import { AdminComponent } from './admin/admin.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CardsComponent } from './cards/cards.component';
+import { HomeComponent } from './home/home.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -34,6 +36,8 @@ export function tokenGetter() {
     AccountComponent,
     AdminComponent,
     NotFoundComponent,
+    HomeComponent,
+    NavbarComponent,
     CardsComponent
   ],
   imports: [
