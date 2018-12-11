@@ -23,8 +23,8 @@ export class CatsComponent implements OnInit {
   weight = new FormControl('', Validators.required);
 
   constructor(private catService: CatService,
-              private formBuilder: FormBuilder,
-              public toast: ToastComponent) { }
+    private formBuilder: FormBuilder,
+    public toast: ToastComponent) { }
 
   ngOnInit() {
     this.getCats();
@@ -37,7 +37,10 @@ export class CatsComponent implements OnInit {
 
   getCats() {
     this.catService.getCats().subscribe(
-      data => this.cats = data,
+      (data) => {
+        this.cats = data,
+          console.log(this.cats);
+      },
       error => console.log(error),
       () => this.isLoading = false,
     );
