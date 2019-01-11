@@ -43,7 +43,8 @@ export class ArticleComponent {
       // data => this.articles = data,
       (data) => {
         this.articles = data,
-          console.log("articles", this.articles);
+        this.articles.reverse()
+          // console.log("articles", this.articles);
       },
       error => console.log(error),
       () => this.isLoading = false,

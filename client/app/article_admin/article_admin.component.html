@@ -2,6 +2,20 @@
 
 <app-toast [message]="toast.message"></app-toast>
 
+
+<div class="card" *ngIf="!isEditing">
+  <h4 class="card-header">Add new article</h4>
+  <div class="card-body">
+    <form class="form-inline" [formGroup]="addArticleForm" (ngSubmit)="addArticle()">
+      <input class="form-control mr-2" type="text" name="title" formControlName="title" placeholder="titre">
+      <input class="form-control mr-2" type="text" name="text" formControlName="text" placeholder="texte">
+      <input class="form-control mr-2" type="text" name="author" formControlName="author" placeholder="Autheur">
+      <input class="form-control mr-2" type="text" name="description" formControlName="description" placeholder="Description">
+      <button class="btn btn-primary" type="submit" [disabled]="!addArticleForm.valid"><i class="fa fa-floppy-o"></i>
+        Add</button>
+    </form>
+  </div>
+</div>
 <div class="card mb-3" *ngIf="!isLoading">
   <h4 class="card-header">Current articles ({{ articles.length }})</h4>
   <div class="card-body">
@@ -54,18 +68,5 @@
         </tr>
       </tbody>
     </table>
-  </div>
-</div>
-
-<div class="card" *ngIf="!isEditing">
-  <h4 class="card-header">Add new article</h4>
-  <div class="card-body">
-    <form class="form-inline" [formGroup]="addArticleForm" (ngSubmit)="addArticle()">
-        <input class="form-control mr-2" type="text" name="title" formControlName="title" placeholder="titre">
-        <input class="form-control mr-2" type="text" name="text" formControlName="text" placeholder="texte">
-        <input class="form-control mr-2" type="text" name="author" formControlName="author" placeholder="Autheur">
-        <input class="form-control mr-2" type="text" name="description" formControlName="description" placeholder="Description">
-              <button class="btn btn-primary" type="submit" [disabled]="!addArticleForm.valid"><i class="fa fa-floppy-o"></i> Add</button>
-    </form>
   </div>
 </div>

@@ -46,7 +46,7 @@ export class ArticlesAdminComponent implements OnInit {
     this.articleService.getArticles().subscribe(
       (data) => {
         this.articles = data,
-          console.log("this.articles",this.articles);
+          console.log("this articles",this.articles);
       },
       error => console.log(error),
       () => this.isLoading = false,
