@@ -172,7 +172,7 @@ img::-moz-selection {
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 56px);
-  background-image: url("https://lemag.nikonclub.fr/wp-content/uploads/2016/11/Photo-selection-pour-Nikon-France-Mattia-Bonavida-2016-8.jpg");
+  background-image: url("https://labodessavoirs.fr/wp-content/uploads/2017/01/studio-de-la-danse-nantes.jpg");
   background-position: center center;
   background-size: cover;
 }
@@ -313,4 +313,8 @@ header.masthead p {
 .btn-primary:active, .btn-primary:focus {
   -webkit-box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;
   box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;
+}
+mark {
+  background-color: black;
+  color: white;
 }
