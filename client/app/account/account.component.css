@@ -1,0 +1,13 @@
+hr {
+  background-color: #F05F40;
+  height: 2px;
+}
+ 
+.card {
+    margin-top: 10%
+}
+@media(max-width:765px){
+    .card {
+        margin-top: 20%
+    }
+}
