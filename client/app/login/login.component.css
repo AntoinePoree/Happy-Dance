@@ -1,0 +1,18 @@
+.card {
+    margin-top: 10%
+}
+@media(max-width:765px){
+    .card {
+        margin-top: 20%
+    }
+}
+
+.background {
+    height: 100vh;
+    min-height: 650px;
+    padding-top: 10rem;
+    padding-bottom: calc(10rem - 56px);
+    background-image: url("../../assets/login.jpg");
+    background-position: center center;
+    background-size: cover;
+}
