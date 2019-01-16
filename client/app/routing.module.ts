@@ -11,6 +11,7 @@ import { AccountComponent } from './account/account.component';
 import { AdminComponent } from './admin/admin.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
+import { ArticleIDComponent } from './article_id/article_id.component';
 
 import { AuthGuardLogin } from './services/auth-guard-login.service';
 import { AuthGuardAdmin } from './services/auth-guard-admin.service';
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'equipe', component: EquipeComponent },
+  { path: 'article/:id', component: ArticleIDComponent },
   { path: 'cats', component: CatsComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },

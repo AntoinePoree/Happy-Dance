@@ -1,12 +1,12 @@
 <!-- <app-loading [condition]="isLoading"></app-loading>
 
-<app-toast [message]="toast.message"></app-toast> -->
+<app-toast [message]="toast.message"></app-toast>  -->
 <!-- Affichage d'uniquement des 5 articles rédigées récemment  -->
 <section class="p-0" id="portfolio">
   <div class="container-fluid p-0" >
     <div class="row no-gutters popup-gallery">
       <div class="col-lg-4 col-sm-6" *ngIf="articles[0]">
-        <a class="portfolio-box" href="img/portfolio/fullsize/1.jpg" ><!-- *ngIf="article[0]" [routerLink]="['/article', ramdomProjets[0]._id]" -->
+        <a class="portfolio-box"  [routerLink]="['/article', articles[0]._id]">
           <img class="img-fluid" src="http://1.bp.blogspot.com/-sQ6TJ45S5sE/Ts-kwQW5x8I/AAAAAAAAADY/_cCPejwK89I/s1600/652ca531.jpg"
             alt="">
           <div class="portfolio-box-caption">
@@ -22,7 +22,7 @@
         </a>
       </div>
       <div class="col-lg-4 col-sm-6" *ngIf="articles[1]">
-        <a class="portfolio-box" href="img/portfolio/fullsize/2.jpg">
+        <a class="portfolio-box"  [routerLink]="['/article', articles[1]._id]">
           <img class="img-fluid" src="http://1.bp.blogspot.com/-sQ6TJ45S5sE/Ts-kwQW5x8I/AAAAAAAAADY/_cCPejwK89I/s1600/652ca531.jpg"
             alt="">
           <div class="portfolio-box-caption">
@@ -38,7 +38,7 @@
         </a>
       </div>
       <div class="col-lg-4 col-sm-6" *ngIf="articles[2]">
-        <a class="portfolio-box" href="img/portfolio/fullsize/3.jpg">
+        <a class="portfolio-box"  [routerLink]="['/article', articles[2]._id]">
           <img class="img-fluid" src="http://1.bp.blogspot.com/-sQ6TJ45S5sE/Ts-kwQW5x8I/AAAAAAAAADY/_cCPejwK89I/s1600/652ca531.jpg"
             alt="">
           <div class="portfolio-box-caption">
@@ -55,7 +55,7 @@
         </a>
       </div>
       <div class="col-lg-4 col-sm-6" *ngIf="articles[3]">
-        <a class="portfolio-box" href="img/portfolio/fullsize/4.jpg">
+        <a class="portfolio-box"  [routerLink]="['/article', articles[3]._id]">
           <img class="img-fluid" src="http://1.bp.blogspot.com/-sQ6TJ45S5sE/Ts-kwQW5x8I/AAAAAAAAADY/_cCPejwK89I/s1600/652ca531.jpg"
             alt="">
           <div class="portfolio-box-caption">
@@ -72,7 +72,7 @@
         </a>
       </div>
       <div class="col-lg-4 col-sm-6" *ngIf="articles[4]">
-        <a class="portfolio-box" href="img/portfolio/fullsize/5.jpg">
+        <a class="portfolio-box"  [routerLink]="['/article', articles[4]._id]">
           <img class="img-fluid" src="http://1.bp.blogspot.com/-sQ6TJ45S5sE/Ts-kwQW5x8I/AAAAAAAAADY/_cCPejwK89I/s1600/652ca531.jpg"
             alt="">
           <div class="portfolio-box-caption">
@@ -89,7 +89,7 @@
         </a>
       </div>
       <div class="col-lg-4 col-sm-6" *ngIf="articles[5]">
-        <a class="portfolio-box" href="img/portfolio/fullsize/6.jpg">
+        <a class="portfolio-box"  [routerLink]="['/article', articles[5]._id]">
           <img class="img-fluid" src="http://1.bp.blogspot.com/-sQ6TJ45S5sE/Ts-kwQW5x8I/AAAAAAAAADY/_cCPejwK89I/s1600/652ca531.jpg"
             alt="">
           <div class="portfolio-box-caption">
