@@ -25,6 +25,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ArticleComponent } from './article/article.component';
 import { ArticleIDComponent } from './article_id/article_id.component';
 import { ArticlesAdminComponent } from './article_admin/article_admin.component';
+import { UploadComponent } from './upload/upload.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -47,7 +48,8 @@ export function tokenGetter() {
     ArticleComponent,
     NavbarComponent,
     CardsComponent,
-    EquipeComponent
+    EquipeComponent,
+    UploadComponent
   ],
   imports: [
     RoutingModule,

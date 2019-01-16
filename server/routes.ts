@@ -1,5 +1,7 @@
 import * as express from 'express';
 
+import UploadController from './controllers/UploadController';
+
 import CatController from './controllers/CatController';
 import ArticleController from './controllers/ArticleController';
 import UserController from './controllers/UserController';
@@ -9,7 +11,9 @@ import UserController from './controllers/UserController';
 export default function routes(app) {
 
   const router = express.Router();
-  
+
+  const upload = new UploadController();
+
   const cat = new CatController();
   const article = new ArticleController();
   const user = new UserController();
@@ -38,6 +42,10 @@ export default function routes(app) {
   router.route('/user/:id').get(user.get);
   router.route('/user/:id').put(user.update);
   router.route('/user/:id').delete(user.delete);
+
+  // upload
+  router.route('/upload').post(upload.upload);
+  router.route('/file/:filename').get(upload.getFile);
 
   // Apply the routes to our application with the prefix /api
   app.use('/api', router);

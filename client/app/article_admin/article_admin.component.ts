@@ -25,13 +25,14 @@ export class ArticlesAdminComponent implements OnInit {
   author = new FormControl('', Validators.required);
   description = new FormControl('', Validators.required);
 
+  filename: string;
+  uploadOk: boolean;
 
   constructor(private articleService: ArticleService,
     private formBuilder: FormBuilder,
     public toast: ToastComponent) { }
 
   ngOnInit() {
-    console.log("Called");
     this.getArticles();
     this.addArticleForm = this.formBuilder.group({
       title: this.title,
@@ -42,11 +43,16 @@ export class ArticlesAdminComponent implements OnInit {
     });
   }
 
+  onFileUploaded = (filename) => {
+    this.filename = filename;
+    // console.log("filename",filename);
+  }
+
   getArticles() {
     this.articleService.getArticles().subscribe(
       (data) => {
         this.articles = data,
-          console.log("this articles",this.articles);
+          console.log("this articles", this.articles);
       },
       error => console.log(error),
       () => this.isLoading = false,
@@ -54,14 +60,16 @@ export class ArticlesAdminComponent implements OnInit {
   }
 
   addArticle() {
-    this.articleService.addArticle(this.addArticleForm.value).subscribe(
-      (res) => {
-        this.articles.push(res);
-        this.addArticleForm.reset();
-        this.toast.setMessage('item added successfully.', 'success');
-      },
-      error => console.log(error),
-    );
+    this.addArticleForm.value.picture = this.filename,
+      this.articleService.addArticle(this.addArticleForm.value).subscribe(
+        (res) => {
+          this.articles.push(res);
+          // console.log("articles", this.articles,"res", res)
+          this.addArticleForm.reset();
+          this.toast.setMessage('item added successfully.', 'success');
+        },
+        error => console.log(error),
+      );
   }
 
   enableEditing(article: Article) {
@@ -78,6 +86,7 @@ export class ArticlesAdminComponent implements OnInit {
   }
 
   editArticle(article: Article) {
+    article.picture = this.filename;
     this.articleService.editArticle(article).subscribe(
       () => {
         this.isEditing = false;
