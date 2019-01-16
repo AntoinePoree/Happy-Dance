@@ -76,15 +76,23 @@
           <a routerLink="/" class="nav-link" routerLinkActive="active">Accueil</a>
         </li>
         <li class="nav-item">
+          <a routerLink="/equipe" class="nav-link" routerLinkActive="active">Équipe</a>
+        </li>
+        <li class="nav-item">
           <a routerLink="/login" class="nav-link" *ngIf="!auth.loggedIn" routerLinkActive="active">
-             Se connecter
+            Se connecter
           </a>
         </li>
         <li class="nav-item">
           <a routerLink="/account" class="nav-link" *ngIf="auth.loggedIn" routerLinkActive="active">
-            <i class="fa fa-user"></i> Account ({{ auth.currentUser.username }})
+            <i class="fa fa-user"></i> {{ auth.currentUser.username }}
           </a>
         </li>
+        <!-- <li class="nav-item">
+            <a routerLink="/register" class="nav-link" routerLinkActive="active" *ngIf="auth.loggedIn">
+              <i class="fa fa-user-plus"></i> Enregistrer un admin
+            </a>
+          </li> -->
         <li class="nav-item">
           <a routerLink="/admin" class="nav-link" *ngIf="auth.loggedIn && auth.isAdmin" routerLinkActive="active">Gérer
             le site</a>

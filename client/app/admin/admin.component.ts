@@ -15,8 +15,8 @@ export class AdminComponent implements OnInit {
   isLoading = true;
 
   constructor(public auth: AuthService,
-              public toast: ToastComponent,
-              private userService: UserService) { }
+    public toast: ToastComponent,
+    private userService: UserService) { }
 
   ngOnInit() {
     this.getUsers();
@@ -24,7 +24,8 @@ export class AdminComponent implements OnInit {
 
   getUsers() {
     this.userService.getUsers().subscribe(
-      data => this.users = data,
+      data => (this.users = data,
+        console.log(this.users)),
       error => console.log(error),
       () => this.isLoading = false,
     );

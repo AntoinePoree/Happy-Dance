@@ -20,6 +20,7 @@ import { AdminComponent } from './admin/admin.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CardsComponent } from './cards/cards.component';
 import { HomeComponent } from './home/home.component';
+import { EquipeComponent } from './equipe/equipe.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ArticleComponent } from './article/article.component';
 import { ArticlesAdminComponent } from './article_admin/article_admin.component';
@@ -43,7 +44,8 @@ export function tokenGetter() {
     HomeComponent,
     ArticleComponent,
     NavbarComponent,
-    CardsComponent
+    CardsComponent,
+    EquipeComponent
   ],
   imports: [
     RoutingModule,

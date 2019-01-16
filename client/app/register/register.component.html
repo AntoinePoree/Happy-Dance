@@ -1,7 +1,7 @@
 <app-toast [message]="toast.message"></app-toast>
 
 <div class="card">
-  <h4 class="card-header">Register</h4>
+  <h4 class="card-header">Enregistrer une personne</h4>
   <div class="card-body">
     <form [formGroup]="registerForm" (ngSubmit)="register()">
       <div class="input-group" [ngClass]="setClassUsername()">
@@ -28,7 +28,7 @@
         </div>
         <select class="custom-select" name="role" formControlName="role">
           <option value="" selected disabled>Role</option>
-          <option value="user">User</option>
+          <!-- <option value="user">User</option> -->
           <option value="admin">Admin</option>
         </select>
       </div>
