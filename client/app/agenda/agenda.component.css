@@ -1,0 +1,58 @@
+.agenda {
+  margin-top: 10vh;
+}
+
+@media (max-width: 550px) {
+  .big-container {
+    display: none;
+  }
+}
+
+@media (min-width: 550px) {
+  .small-container {
+    display: none;
+  }
+}
+
+/* Responsive iFrame */
+.responsive-iframe-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+
+.responsive-iframe-container iframe,
+.vresponsive-iframe-container object,
+.vresponsive-iframe-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.btn-xl {
+  font-weight: 700;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 300px;
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  padding: 1rem 2rem;
+  background-color: #F05F40;
+  border-color: #F05F40;
+  color: #bef0ff;
+}
+.btn-xl:hover,
+.btn-xl:focus,
+.btn-xl:active {
+  color: #fff;
+  background-color: #ee4b28 !important;
+}
+
+.btn-xl:active,
+.btn-xl:focus {
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;
+  box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;
+}

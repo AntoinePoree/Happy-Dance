@@ -13,6 +13,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
 import { ArticleIDComponent } from './article_id/article_id.component';
 import { UploadComponent } from './upload/upload.component';
+import { AgendaComponent } from './agenda/agenda.component';
 
 import { AuthGuardLogin } from './services/auth-guard-login.service';
 import { AuthGuardAdmin } from './services/auth-guard-admin.service';
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'equipe', component: EquipeComponent },
+  { path: 'agenda', component: AgendaComponent },
   { path: 'article/:id', component: ArticleIDComponent },
   { path: 'cats', component: CatsComponent },
   { path: 'upload', component: UploadComponent },

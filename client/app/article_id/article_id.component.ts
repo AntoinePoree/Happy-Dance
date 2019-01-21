@@ -15,6 +15,7 @@ export class ArticleIDComponent {
 
   article = new Article();
   id: any;
+  picture;
   isLoading = true;
 
   constructor(private articleService: ArticleService,
@@ -28,9 +29,11 @@ export class ArticleIDComponent {
   }
 
   getArticle() {
-    console.log("id", this.id);
     this.articleService.getArticle(this.id).subscribe(
-      data => { this.article = data, console.log("data", data) }
+      data => {
+        this.article = data,
+          this.picture = "api/file/" + this.article.picture
+      }
     );
   }
 }

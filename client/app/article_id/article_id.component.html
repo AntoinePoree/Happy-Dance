@@ -1,4 +1,4 @@
-<header class="masthead text-center text-white d-flex">
+<header *ngIf="picture" class="masthead text-center text-white d-flex" [ngStyle]="{ 'background-image': 'url(' + picture + ')'}">
   <div class="container my-auto">
     <div class="row">
       <div class="col-lg-10 mx-auto">
