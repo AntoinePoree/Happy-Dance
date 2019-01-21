@@ -17,7 +17,7 @@
       <tbody *ngIf="users.length === 0">
         <tr>
           <td colspan="4">There are no registered users.</td>
-        </tr>  
+        </tr>
       </tbody>
       <tbody>
         <tr *ngFor="let user of users">
@@ -29,18 +29,23 @@
               <i class="fa fa-trash"></i>
             </button>
           </td>
-        </tr>  
+        </tr>
       </tbody>
     </table>
   </div>
-  <p>
-      <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-        Gérer les articles
-      </button>
-    </p>
-    <div class="collapse" id="collapseExample">
-      <div class="card card-body">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
+          aria-controls="collapseExample">
+          Gérer les articles
+        </button>
+      </div>
+
+
+      <div class="collapse" id="collapseExample">
+        <div class="card card-body">
           <app-article_admin></app-article_admin>
         </div>
+      </div>
     </div>
-</div>
