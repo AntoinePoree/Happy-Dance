@@ -5,6 +5,7 @@ import UploadController from './controllers/UploadController';
 import CatController from './controllers/CatController';
 import ArticleController from './controllers/ArticleController';
 import UserController from './controllers/UserController';
+import DanceController from './controllers/DanceController';
 // import cat from './models/cat';
 // import user from './models/user';
 
@@ -16,6 +17,7 @@ export default function routes(app) {
 
   const cat = new CatController();
   const article = new ArticleController();
+  const dance = new DanceController();
   const user = new UserController();
 
   // cats
@@ -33,6 +35,14 @@ export default function routes(app) {
   router.route('/article/:id').get(article.get);
   router.route('/article/:id').put(article.update);
   router.route('/article/:id').delete(article.delete);
+
+  // dance
+  router.route('/dance').get(dance.getAll);
+  router.route('/dances/count').get(dance.count);
+  router.route('/dance').post(dance.insert);
+  router.route('/dance/:id').get(dance.get);
+  router.route('/dance/:id').put(dance.update);
+  router.route('/dance/:id').delete(dance.delete);
 
   // users
   router.route('/login').post(user.login);
