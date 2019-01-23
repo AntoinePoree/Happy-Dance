@@ -36,16 +36,31 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col">
-        <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
-          aria-controls="collapseExample">
+        <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseArticle" aria-expanded="false"
+          aria-controls="collapseArticle">
           Gérer les articles
         </button>
       </div>
-
-
-      <div class="collapse" id="collapseExample">
-        <div class="card card-body">
-          <app-article_admin></app-article_admin>
-        </div>
+    </div>
+    <div class="row">
+      <div class="col"></div></div>
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseDance" aria-expanded="false"
+          aria-controls="collapseDance">
+          Gérer les Dances
+        </button>
       </div>
     </div>
+    <div class="collapse" id="collapseArticle">
+      <div class="card card-body">
+        <app-article_admin></app-article_admin>
+      </div>
+    </div>
+    <div class="collapse" id="collapseDance">
+      <div class="card card-body">
+        <app-dance_admin></app-dance_admin>
+      </div>
+    </div>
+  </div>
+</div>

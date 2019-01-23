@@ -12,6 +12,7 @@ import { AdminComponent } from './admin/admin.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
 import { ArticleIDComponent } from './article_id/article_id.component';
+import { DanceIDComponent } from './dance_id/dance_id.component';
 import { UploadComponent } from './upload/upload.component';
 import { AgendaComponent } from './agenda/agenda.component';
 
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'equipe', component: EquipeComponent },
   { path: 'agenda', component: AgendaComponent },
   { path: 'article/:id', component: ArticleIDComponent },
+  { path: 'dance/:id', component: DanceIDComponent },
   { path: 'cats', component: CatsComponent },
   { path: 'upload', component: UploadComponent },
   { path: 'register', component: RegisterComponent },

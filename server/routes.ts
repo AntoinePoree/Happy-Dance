@@ -37,7 +37,7 @@ export default function routes(app) {
   router.route('/article/:id').delete(article.delete);
 
   // dance
-  router.route('/dance').get(dance.getAll);
+  router.route('/dances').get(dance.getAll);
   router.route('/dances/count').get(dance.count);
   router.route('/dance').post(dance.insert);
   router.route('/dance/:id').get(dance.get);

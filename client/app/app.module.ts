@@ -5,6 +5,7 @@ import { RoutingModule } from './routing.module';
 import { SharedModule } from './shared/shared.module';
 import { CatService } from './services/cat.service';
 import { ArticleService } from './services/article.service';
+import { DanceService } from './services/dance.service';
 import { UserService } from './services/user.service';
 import { AuthService } from './services/auth.service';
 import { AuthGuardLogin } from './services/auth-guard-login.service';
@@ -24,7 +25,9 @@ import { EquipeComponent } from './equipe/equipe.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ArticleComponent } from './article/article.component';
 import { ArticleIDComponent } from './article_id/article_id.component';
+import { DanceIDComponent } from './dance_id/dance_id.component';
 import { ArticlesAdminComponent } from './article_admin/article_admin.component';
+import { DancesAdminComponent } from './dance_admin/dance_admin.component';
 import { UploadComponent } from './upload/upload.component';
 
 export function tokenGetter() {
@@ -35,6 +38,8 @@ export function tokenGetter() {
   declarations: [
     AppComponent,
     CatsComponent,
+    DanceIDComponent,
+    DancesAdminComponent,
     ArticleIDComponent,
     ArticlesAdminComponent,
     AboutComponent,
@@ -67,6 +72,7 @@ export function tokenGetter() {
     AuthGuardAdmin,
     CatService,
     ArticleService,
+    DanceService,
     UserService,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

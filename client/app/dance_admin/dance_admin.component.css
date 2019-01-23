@@ -1,0 +1,14 @@
+.table td,
+.table th {
+  width: 25%;
+}
+.dance-text {
+  max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.imageUrl {
+  max-width: 25%;
+}

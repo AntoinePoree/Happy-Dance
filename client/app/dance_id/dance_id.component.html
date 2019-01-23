@@ -1,0 +1,35 @@
+<header *ngIf="picture" class="masthead text-center text-white d-flex" [ngStyle]="{ 'background-image': 'url(' + picture + ')'}">
+  <div class="container my-auto">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <h1 class="text-uppercase">
+          {{dance.name}}
+        </h1>
+        <hr>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="p-0">
+  <div class="container my-auto" *ngIf="dance">
+    <div class="row text">
+      <p>
+        {{dance.text}}
+      </p>
+    </div>
+    <div class="row">
+        <h4>
+          {{dance.description}}
+        </h4>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-3 col-md-5">
+      <a class="btn-location btn-dark btn-xl js-scroll-trigger" routerLink="/">Retour à l'accueil</a>
+    </div>
+  </div>
+</div>
