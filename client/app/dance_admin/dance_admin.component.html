@@ -4,7 +4,7 @@
 
 
 <div class="card" *ngIf="!isEditing">
-  <h4 class="card-header">Ajouter une nouvelle dance</h4>
+  <h4 class="card-header">Ajouter une nouvelle danse</h4>
   <div class="card-body">
     <form class="form-inline" [formGroup]="addDanceForm" (ngSubmit)="addDance()">
       <input class="form-control mr-2" type="text" name="name" formControlName="name" placeholder="Nom de la dance">

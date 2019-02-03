@@ -65,7 +65,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
   <div class="container">
-    <a class="navbar-brand " routerLink="/">Happy Dance</a>
+    <a class="navbar-brand " routerLink="/">Happy Danse</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
       aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -78,14 +78,14 @@
         <li class="nav-item">
           <a routerLink="/agenda" class="nav-link" routerLinkActive="active">Agenda</a>
         </li>
-
-          
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#"  id="dance" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Nos Dances
+          <a class="nav-link dropdown-toggle" href="#" id="dance" role="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            Nos Danses
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" *ngFor="let dance of dances" routerLink="dance/{{ dance._id }}" target="_blank">{{ dance.name }}</a>
+            <a class="dropdown-item" *ngFor="let dance of dances" routerLink="dance/{{ dance._id }}" target="_blank">
+              {{ dance.name }}</a>
           </div>
         </li>
         <!-- <li class="nav-item">
