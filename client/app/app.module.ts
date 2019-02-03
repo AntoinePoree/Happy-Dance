@@ -4,6 +4,8 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { RoutingModule } from './routing.module';
 import { SharedModule } from './shared/shared.module';
 import { CatService } from './services/cat.service';
+import { BureauService } from './services/bureau.service';
+import { ProfService } from './services/prof.service';
 import { ArticleService } from './services/article.service';
 import { DanceService } from './services/dance.service';
 import { UserService } from './services/user.service';
@@ -28,6 +30,8 @@ import { ArticleIDComponent } from './article_id/article_id.component';
 import { DanceIDComponent } from './dance_id/dance_id.component';
 import { ArticlesAdminComponent } from './article_admin/article_admin.component';
 import { DancesAdminComponent } from './dance_admin/dance_admin.component';
+import { StaffComponent } from './staff/staff.component';
+import { StaffAdminComponent } from './staff_admin/staff_admin.component';
 import { UploadComponent } from './upload/upload.component';
 
 export function tokenGetter() {
@@ -43,6 +47,8 @@ export function tokenGetter() {
     ArticleIDComponent,
     ArticlesAdminComponent,
     AboutComponent,
+    StaffComponent,
+    StaffAdminComponent,
     RegisterComponent,
     LoginComponent,
     LogoutComponent,
@@ -71,6 +77,8 @@ export function tokenGetter() {
     AuthGuardLogin,
     AuthGuardAdmin,
     CatService,
+    BureauService,
+    ProfService,
     ArticleService,
     DanceService,
     UserService,

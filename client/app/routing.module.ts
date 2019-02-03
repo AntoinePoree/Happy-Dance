@@ -15,6 +15,7 @@ import { ArticleIDComponent } from './article_id/article_id.component';
 import { DanceIDComponent } from './dance_id/dance_id.component';
 import { UploadComponent } from './upload/upload.component';
 import { AgendaComponent } from './agenda/agenda.component';
+import { StaffComponent } from './staff/staff.component';
 
 import { AuthGuardLogin } from './services/auth-guard-login.service';
 import { AuthGuardAdmin } from './services/auth-guard-admin.service';
@@ -22,6 +23,7 @@ import { AuthGuardAdmin } from './services/auth-guard-admin.service';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'équipe', component: StaffComponent },
   { path: 'equipe', component: EquipeComponent },
   { path: 'agenda', component: AgendaComponent },
   { path: 'article/:id', component: ArticleIDComponent },

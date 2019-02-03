@@ -1,0 +1,85 @@
+<app-loading [condition]="isLoading"></app-loading>
+
+<app-toast [message]="toast.message"></app-toast>
+
+
+<div class="card" *ngIf="!isEditingBureau">
+  <h4 class="card-header">Ajouter une nouvelle bureau</h4>
+  <div class="card-body">
+    <form class="form-inline" [formGroup]="addBureauForm" (ngSubmit)="addBureau()">
+      <input class="form-control mr-2" type="text" name="name" formControlName="name" placeholder="Nom de la bureau">
+      <app-upload class="upload" [callback]="onFileUploaded"></app-upload>
+      <!-- <app-upload class="upload" name="galerie" formControlName="galerie" [callback]="onFileUploaded"></app-upload> -->
+
+      <textarea class="form-control mr-2" type="textarea" cols="40" rows="5" name="text" formControlName="text"
+        placeholder="Texte à afficher"></textarea>
+      <textarea class="form-control mr-2" type="textarea" cols="40" rows="5" name="description" formControlName="description"
+        placeholder="Texte 2 à afficher"></textarea>
+      <button class="btn btn-primary" type="submit" [disabled]="!addBureauForm.valid"><i class="fa fa-floppy-o"></i>
+        Add</button>
+    </form>
+  </div>
+</div>
+<div class="card mb-3" *ngIf="!isLoading">
+  <h4 class="card-header">Current bureaux ({{ bureaux.length }})</h4>
+  <div class="card-body table-responsive">
+    <form class="form" #form="ngForm" (ngSubmit)="editBureau(bureau)">
+
+      <table class="table table-bordered">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">Nom</th>
+            <th scope="col">Prénom</th>
+            <th scope="col">Photo</th>
+            <th scope="col">Résumé</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="bureaux.length === 0">
+          <tr>
+            <td colspan="6">There are no bureaux in the DB. Add a new bureau below.</td>
+          </tr>
+        </tbody>
+        <tbody *ngIf="!isEditingBureau">
+          <tr *ngFor="let bureau of bureaux">
+            <td>{{ bureau.name }}</td>
+            <td>{{ bureau.surname }}</td>
+            <td>
+              <img class="imageUrl" src="api/file/{{ bureau.picture }}" alt="Can't access">
+            </td>
+            <td class="bureau-text">{{ bureau.resume }}</td>
+            <td>
+              <button class="btn btn-sm btn-primary" (click)="enableEditingBureau(bureau)"><i class="fa fa-pencil"></i>
+                Edit</button>
+              <button class="btn btn-sm btn-danger" (click)="deleteBureau(bureau)"><i class="fa fa-trash"></i> Delete</button>
+            </td>
+          </tr>
+        </tbody>
+        <tbody *ngIf="isEditingBureau">
+          <tr>
+            <td>
+              <input class="form-control mr-2" type="text" name="name" [(ngModel)]="bureau.name" placeholder="Nom"
+                required>
+            </td>
+            <td>
+              <input class="form-control mr-2" type="text" name="surname" [(ngModel)]="bureau.surname" placeholder="Prénom"
+                required>
+            </td>
+            <td>
+              <app-upload class="up col-12 col-md-5" [callback]="onFileUploaded"></app-upload>
+            </td>
+            <td>
+              <textarea class="form-control mr-2" type="textarea" cols="40" rows="5" name="resume" [(ngModel)]="bureau.resume"
+                placeholder="Texte à afficher" required></textarea>
+            </td>
+            <td>
+              <button class="btn btn-sm btn-primary mr-2" type="submit" [disabled]="!form.form.valid"><i class="fa fa-floppy-o"></i>
+                Save</button>
+              <button class="btn btn-sm btn-warning" (click)="cancelEditingBureau()"><i class="fa fa-times"></i> Cancel</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </div>
+</div>

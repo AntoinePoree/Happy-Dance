@@ -6,6 +6,8 @@ import CatController from './controllers/CatController';
 import ArticleController from './controllers/ArticleController';
 import UserController from './controllers/UserController';
 import DanceController from './controllers/DanceController';
+import ProfController from './controllers/ProfController';
+import BureauController from './controllers/BureauController';
 // import cat from './models/cat';
 // import user from './models/user';
 
@@ -16,6 +18,8 @@ export default function routes(app) {
   const upload = new UploadController();
 
   const cat = new CatController();
+  const prof = new ProfController();
+  const bureau = new BureauController();
   const article = new ArticleController();
   const dance = new DanceController();
   const user = new UserController();
@@ -52,6 +56,22 @@ export default function routes(app) {
   router.route('/user/:id').get(user.get);
   router.route('/user/:id').put(user.update);
   router.route('/user/:id').delete(user.delete);
+
+  // profs
+  router.route('/profs').get(prof.getAll);
+  router.route('/profs/count').get(prof.count);
+  router.route('/prof').post(prof.insert);
+  router.route('/prof/:id').get(prof.get);
+  router.route('/prof/:id').put(prof.update);
+  router.route('/prof/:id').delete(prof.delete);
+
+  // bureaux
+  router.route('/bureaux').get(bureau.getAll);
+  router.route('/bureaux/count').get(bureau.count);
+  router.route('/bureau').post(bureau.insert);
+  router.route('/bureau/:id').get(bureau.get);
+  router.route('/bureau/:id').put(bureau.update);
+  router.route('/bureau/:id').delete(user.delete);
 
   // upload
   router.route('/upload').post(upload.upload);
