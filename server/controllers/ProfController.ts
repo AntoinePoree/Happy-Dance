@@ -1,6 +1,6 @@
-import catModel from '../models/catModel';
+import profModel from '../models/profModel';
 import BaseController from './BaseController';
 
-export default class CatController extends BaseController {
-  model = catModel;
+export default class ProfController extends BaseController {
+  model = profModel;
 }

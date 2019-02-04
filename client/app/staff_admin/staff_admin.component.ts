@@ -22,12 +22,36 @@ export class StaffAdminComponent implements OnInit {
   isLoading = true;
   isEditing = false;
 
-  addBureauForm: FormGroup;
-  addProfForm: FormGroup;
-  name = new FormControl('', Validators.required);
-  surname = new FormControl('', Validators.required);
-  photo = new FormControl('');
-  resume = new FormControl('', Validators.required);
+  // addBureauForm: FormGroup;
+  // name = new FormControl('', Validators.required);
+  // surname = new FormControl('', Validators.required);
+  // photo = new FormControl('');
+  // resume = new FormControl('');
+
+  // addProfForm: FormGroup;
+  // nameprof = new FormControl('', Validators.required);
+  // surnameprof = new FormControl('', Validators.required);
+  // photoprof = new FormControl('');
+  // resumeprof = new FormControl('');
+  addBureauForm = new FormGroup({
+    name: new FormControl(null, [
+      Validators.required
+    ]), surname: new FormControl(null, [
+      Validators.required
+    ]),
+    photo: new FormControl(),
+    resume: new FormControl()
+  });
+
+  addProfForm = new FormGroup({
+    name: new FormControl(null, [
+      Validators.required
+    ]), surname: new FormControl(null, [
+      Validators.required
+    ]),
+    photo: new FormControl(),
+    resume: new FormControl()
+  });
 
   filename: string;
   uploadOk: boolean;
@@ -40,18 +64,7 @@ export class StaffAdminComponent implements OnInit {
   ngOnInit() {
     this.getBureaux();
     this.getProfs();
-    this.addProfForm = this.formBuilder.group({
-      name: this.name,
-      surname: this.surname,
-      photo: this.photo,
-      resume: this.resume,
-    });
-    this.addBureauForm = this.formBuilder.group({
-      name: this.name,
-      surname: this.surname,
-      photo: this.photo,
-      resume: this.resume,
-    });
+
   }
 
   onFileUploaded = (filename) => {
@@ -61,9 +74,10 @@ export class StaffAdminComponent implements OnInit {
 
   getBureaux() {
     this.BureauService.getBureaux().subscribe(
-      (data) =>
+      (data) => {
         this.bureaux = data,
-      // console.log("this bureaux", this.bureaux)},
+          console.log("this bureaux", this.bureaux)
+      },
       error => console.log(error),
       () => this.isLoading = false,
     );
@@ -74,7 +88,7 @@ export class StaffAdminComponent implements OnInit {
       this.BureauService.addBureau(this.addBureauForm.value).subscribe(
         (res) => {
           this.bureaux.push(res);
-          // console.log("bureaux", this.bureaux,"res", res)
+          console.log("bureaux", this.bureaux, "res", res)
           this.addBureauForm.reset();
           this.toast.setMessage('item added successfully.', 'success');
         },
@@ -126,9 +140,10 @@ export class StaffAdminComponent implements OnInit {
   //Profs
   getProfs() {
     this.ProfService.getProfs().subscribe(
-      (data) =>
+      (data) => {
         this.profs = data,
-      // console.log("this profs", this.profs)},
+          console.log("this profs", this.profs)
+      },
       error => console.log(error),
       () => this.isLoading = false,
     );

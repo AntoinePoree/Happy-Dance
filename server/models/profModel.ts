@@ -7,6 +7,6 @@ const profSchema = new mongoose.Schema({
   resume: String,
 });
 
-const profModel = mongoose.model('burprofeau', profSchema);
+const profModel = mongoose.model('prof', profSchema);
 
 export default profModel;
