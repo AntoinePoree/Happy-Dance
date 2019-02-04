@@ -71,7 +71,7 @@ export default function routes(app) {
   router.route('/bureau').post(bureau.insert);
   router.route('/bureau/:id').get(bureau.get);
   router.route('/bureau/:id').put(bureau.update);
-  router.route('/bureau/:id').delete(user.delete);
+  router.route('/bureau/:id').delete(bureau.delete);
 
   // upload
   router.route('/upload').post(upload.upload);

@@ -26,6 +26,7 @@ export class StaffComponent {
 
   ngOnInit() {
     this.getBureaux();
+    this.getProfs();
 
   }
 

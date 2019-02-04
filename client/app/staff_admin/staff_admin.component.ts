@@ -20,7 +20,8 @@ export class StaffAdminComponent implements OnInit {
   prof = new Prof();
   profs: Prof[] = [];
   isLoading = true;
-  isEditing = false;
+  isEditingProf = false;
+  isEditingBureau = false;
 
   // addBureauForm: FormGroup;
   // name = new FormControl('', Validators.required);
@@ -97,12 +98,12 @@ export class StaffAdminComponent implements OnInit {
   }
 
   enableEditingBureau(bureau: Bureau) {
-    this.isEditing = true;
+    this.isEditingBureau = true;
     this.bureau = bureau;
   }
 
   cancelEditingBureau() {
-    this.isEditing = false;
+    this.isEditingBureau = false;
     this.bureau = new Bureau();
     this.toast.setMessage('item editing cancelled.', 'warning');
     // reload the bureaux to reset the editing
@@ -113,7 +114,7 @@ export class StaffAdminComponent implements OnInit {
     bureau.photo = this.filename;
     this.BureauService.editBureau(bureau).subscribe(
       () => {
-        this.isEditing = false;
+        this.isEditingBureau = false;
         this.bureau = bureau;
         this.toast.setMessage('item edited successfully.', 'success');
       },
@@ -163,12 +164,12 @@ export class StaffAdminComponent implements OnInit {
   }
 
   enableEditingProf(prof: Prof) {
-    this.isEditing = true;
+    this.isEditingProf = true;
     this.prof = prof;
   }
 
   cancelEditingProf() {
-    this.isEditing = false;
+    this.isEditingProf = false;
     this.prof = new Prof();
     this.toast.setMessage('item editing cancelled.', 'warning');
     // reload the profs to reset the editing
@@ -179,7 +180,7 @@ export class StaffAdminComponent implements OnInit {
     prof.photo = this.filename;
     this.ProfService.editProf(prof).subscribe(
       () => {
-        this.isEditing = false;
+        this.isEditingProf = false;
         this.prof = prof;
         this.toast.setMessage('item edited successfully.', 'success');
       },

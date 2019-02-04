@@ -23,7 +23,7 @@ import { AdminComponent } from './admin/admin.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AgendaComponent } from './agenda/agenda.component';
 import { HomeComponent } from './home/home.component';
-import { EquipeComponent } from './equipe/equipe.component';
+import { ContactComponent } from './contact/contact.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ArticleComponent } from './article/article.component';
 import { ArticleIDComponent } from './article_id/article_id.component';
@@ -59,7 +59,7 @@ export function tokenGetter() {
     ArticleComponent,
     NavbarComponent,
     AgendaComponent,
-    EquipeComponent,
+    ContactComponent,
     UploadComponent
   ],
   imports: [

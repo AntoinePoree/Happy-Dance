@@ -1,16 +1,71 @@
-<div class="container-fluid">
+<!-- <div class="container-fluid" *ngFor="let bureau of bureaux">
   <hr>
   <div class="row justify-content-center">
     <div class="col-6">
       <div class="media">
-        <img src="https://cdn-s3.si.com/images/monic-perez-IMG.jpg" class="align-self-start mr-3" alt="..." style="max-height: 30vh">
+        <img src="/api/file/{{ bureau.photo }}" onerror="this.onerror=404;this.src='./../assets/avatar-male.png'" class="align-self-start mr-3 rounded-circle" alt="..." style="max-height: 30vh">
         <div class="media-body">
-          <h5 class="mt-0">Top-aligned media</h5>
-          <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus
+            <h4 class="mt-0">{{ bureau.name }}</h4>
+            <h5 class="mt-0">{{ bureau.surname }}</h5>
+            <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus
             odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
             fringilla. Donec lacinia congue felis in faucibus.</p>
         </div>
       </div>
     </div>
   </div>
+</div> -->
+
+<div class="jumbotron jumbotron-fluid" style='margin-top: 56px; margin-bottom:-10vh;'>
+  <div class="container">
+    <h1 class="display-5">Personnes faisant partie de l'administration</h1>
+    <!-- <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p> -->
+    <hr class="my-4">
+  </div>
 </div>
+<!-- Personne faisant partie des bureaux -->
+<div class="container-fluid" *ngFor="let bureau of bureaux">
+  <div class="d-flex justify-content-center" *ngIf="bureau">
+    <div class="card flex-row flex-wrap w-auto p-3">
+      <div class="card-header border-0">
+        <img src="/api/file/{{ bureau.photo }}" onerror="this.onerror=404;this.src='./../assets/avatar-male.png'" class="align-self-start mr-3 rounded-circle"
+          alt="..." style="max-height: 30vh">
+      </div>
+      <div class="card-block px-2">
+        <hr>
+        <h3 class="card-title">{{ bureau.name }} {{ bureau.surname }}</h3>
+        <p class="card-text">{{ bureau.resume }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="jumbotron jumbotron-fluid" style='margin-top: 56px; margin-bottom:-10vh;'>
+  <div class="container">
+    <h1 class="display-5">Professeur</h1>
+    <!-- <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p> -->
+    <hr class="my-4">
+  </div>
+</div>
+<!-- Personne faisant partie des bureaux -->
+<div class="container-fluid" *ngFor="let prof of profs">
+  <div class="d-flex justify-content-center" *ngIf="bureau">
+    <div class="card flex-row flex-wrap w-auto p-3">
+      <div class="card-header border-0">
+        <img src="/api/file/{{ prof.photo }}" onerror="this.onerror=404;this.src='./../assets/avatar-male.png'" class="align-self-start mr-3 rounded-circle"
+          alt="..." style="max-height: 30vh">
+      </div>
+      <div class="card-block px-2">
+        <hr>
+        <h3 class="card-title">{{ prof.name }} {{ prof.surname }}</h3>
+        <p class="card-text">{{ prof.resume }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr>
+<section id="contact">
+  <app-contact></app-contact>
+</section>
