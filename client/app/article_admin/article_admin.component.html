@@ -12,7 +12,9 @@
       <textarea class="form-control mr-2" type="textarea" cols="40" rows="5" name="text" formControlName="text"
         placeholder="Texte à afficher"></textarea>
       <!-- <input class="form-control mr-2" type="text" name="author" formControlName="author" placeholder="Autheur"> -->
-      <input class="form-control mr-2" type="text" name="description" formControlName="description" placeholder="Description">
+      <textarea class="form-control mr-2" type="textarea" cols="40" rows="5" name="description" formControlName="description"
+        maxlength='150' placeholder="Description à afficher"></textarea>
+      <!-- <input class="form-control mr-2" type="text" name="description" formControlName="description" placeholder="Description"> -->
       <button class="btn btn-primary" type="submit" [disabled]="!addArticleForm.valid"><i class="fa fa-floppy-o"></i>
         Add</button>
     </form>
@@ -21,63 +23,68 @@
 <div class="card mb-3" *ngIf="!isLoading">
   <h4 class="card-header">Current articles ({{ articles.length }})</h4>
   <div class="card-body table-responsive">
-      <form class="form" #form="ngForm" (ngSubmit)="editArticle(article)">
+    <form class="form" #form="ngForm" (ngSubmit)="editArticle(article)">
 
-    <table class="table table-bordered">
-      <thead class="thead-light">
-        <tr>
-          <th scope="col">Title</th>
-          <th scope="col">Picture</th>
-          <th scope="col">Texte</th>
-          <th scope="col">Author</th>
-          <th scope="col">Description</th>
-          <th scope="col">Actions</th>
-        </tr>
-      </thead>
-      <tbody *ngIf="articles.length === 0">
-        <tr>
-          <td colspan="6">There are no articles in the DB. Add a new article below.</td>
-        </tr>
-      </tbody>
-      <tbody *ngIf="!isEditing">
-        <tr *ngFor="let article of articles">
-          <td>{{ article.title }}</td>
-          <td>
-            <img class="imageUrl" src="api/file/{{ article.picture }}" alt="Can't access">
-          </td>
-          <td class="article-text">{{ article.text }}</td>
-          <td>{{ article.author }}</td>
-          <td>{{ article.description }}</td>
-          <td>
-            <button class="btn btn-sm btn-primary" (click)="enableEditing(article)"><i class="fa fa-pencil"></i> Edit</button>
-            <button class="btn btn-sm btn-danger" (click)="deleteArticle(article)"><i class="fa fa-trash"></i> Delete</button>
-          </td>
-        </tr>
-      </tbody>
-      <tbody *ngIf="isEditing">
-        <tr>
-          <td>
+      <table class="table table-bordered">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Picture</th>
+            <th scope="col">Texte</th>
+            <th scope="col">Author</th>
+            <th scope="col">Description</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="articles.length === 0">
+          <tr>
+            <td colspan="6">There are no articles in the DB. Add a new article below.</td>
+          </tr>
+        </tbody>
+        <tbody *ngIf="!isEditing">
+          <tr *ngFor="let article of articles">
+            <td>{{ article.title }}</td>
+            <td>
+              <img class="imageUrl" src="api/file/{{ article.picture }}" alt="Can't access">
+            </td>
+            <td class="article-text">{{ article.text }}</td>
+            <td>{{ article.author }}</td>
+            <td class="article-text">{{ article.description }}</td>
+            <td>
+              <button class="btn btn-sm btn-primary" (click)="enableEditing(article)"><i class="fa fa-pencil"></i> Edit</button>
+              <button class="btn btn-sm btn-danger" (click)="deleteArticle(article)"><i class="fa fa-trash"></i> Delete</button>
+            </td>
+          </tr>
+        </tbody>
+        <tbody *ngIf="isEditing">
+          <tr>
+            <td>
               <input class="form-control mr-2" type="text" name="title" [(ngModel)]="article.title" placeholder="Titre"
                 required>
-            </td><td>
+            </td>
+            <td>
               <app-upload class="up col-12 col-md-5" [callback]="onFileUploaded"></app-upload>
-            </td><td>
+            </td>
+            <td>
               <textarea class="form-control mr-2" type="textarea" cols="40" rows="5" name="text" [(ngModel)]="article.text"
                 placeholder="Texte à afficher" required></textarea>
-              </td><td>
+            </td>
+            <td>
               <input class="form-control mr-2" type="text" name="author" [(ngModel)]="article.author" placeholder="Autheur de l'article"
                 required>
-              </td><td>
-              <input class="form-control mr-2" type="text" name="description" [(ngModel)]="article.description"
-                placeholder="description de l'article" required>
-              </td><td>
+            </td>
+            <td>
+              <textarea class="form-control mr-2" type="textarea" cols="40" rows="5" name="description" [(ngModel)]="article.description"
+                maxlength='150' placeholder="Description à afficher" required></textarea>
+            </td>
+            <td>
               <button class="btn btn-sm btn-primary mr-2" type="submit" [disabled]="!form.form.valid"><i class="fa fa-floppy-o"></i>
                 Save</button>
               <button class="btn btn-sm btn-warning" (click)="cancelEditing()"><i class="fa fa-times"></i> Cancel</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </form>
   </div>
 </div>

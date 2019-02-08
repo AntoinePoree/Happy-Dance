@@ -1,12 +1,42 @@
-.container-fluid {
-  margin-top: 56px;
-}
 
 .card-router {
   cursor: pointer;
+  margin-top: 2rem;
 }
 
 .rounded-circle {
   max-height: 30vh;
-  min-height: 30vh
+  min-height: 30vh;
+  max-width: 100%;
+}
+
+.contact {
+  margin-top: 3rem;
+}
+
+
+@media (max-width: 550px) {
+  .card-text {
+    overflow: scroll;
+    text-overflow: ellipsis;
+    max-height: 20vh;
+  }
+  .container-fluid {
+  margin-top: 56px;
+}
+}
+
+@media (min-width: 550px) {
+  .card-block {
+    max-width: 50%;
+  }
+  .card-text {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .container-fluid {
+    margin-top: 56px;
+  }
 }
