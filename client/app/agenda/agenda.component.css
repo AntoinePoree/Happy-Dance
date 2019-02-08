@@ -13,11 +13,14 @@
     display: none;
   }
 }
+.small-container {
+  min-height: 60vh;
+}
 
 /* Responsive iFrame */
 .responsive-iframe-container {
   position: relative;
-  padding-bottom: 56.25%;
+  padding-bottom: 35%;
   padding-top: 30px;
   height: 0;
   overflow: hidden;
@@ -42,7 +45,8 @@
   padding: 1rem 2rem;
   background-color: #F05F40;
   border-color: #F05F40;
-  color: #bef0ff;
+  color: rgb(240, 238, 238);
+  margin-top: 1rem;
 }
 .btn-xl:hover,
 .btn-xl:focus,
