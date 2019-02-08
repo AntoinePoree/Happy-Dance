@@ -1,41 +1,34 @@
-<header *ngIf="picture" class="masthead text-center text-white d-flex" [ngStyle]="{ 'background-image': 'url(' + picture + ')'}">
-  <div class="container my-auto">
-    <div class="row">
-      <div class="col-lg-10 mx-auto">
-        <h1 class="text-uppercase">
-          {{article.title}}
-        </h1>
-        <hr>
-      </div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6">
+      <h1 class="mx-auto text-uppercase">
+        {{article.title}}
+      </h1>
+    </div>
+    <div class="col-sm-6">
+      <img src="{{picture}}" alt="image indisponible">
     </div>
   </div>
-</header>
-
-<section class="p-0">
-  <div class="container my-auto" *ngIf="article">
-    <div class="row text">
-      <p>
-        {{article.text}}
-      </p>
-    </div>
-    <div class="row justify-content-between">
-      <div class="offset-8 col-4">
-        <h4>
-          {{article.author}}
-        </h4>
-      </div>
-    </div>
-  </div>
-</section>
+</div>
 
 <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-3 col-md-5">
-        <a class="btn-location btn-dark btn-xl js-scroll-trigger" routerLink="/">Retour à l'accueil</a>
-      </div>
+  <div class="row justify-content-center text">
+    <div class="col-xs-12">
+      <p class="text">
+        {{newText}}
+      </p>
     </div>
   </div>
-  <hr>
-  <section id="contact">
-    <app-contact></app-contact>
-  </section>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 btn-center">
+      <a class="btn-location btn-dark btn-xl js-scroll-trigger" routerLink="/">Retour à l'accueil</a>
+    </div>
+  </div>
+</div>
+<hr>
+<section id="contact">
+  <app-contact></app-contact>
+</section>

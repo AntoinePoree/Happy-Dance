@@ -21,8 +21,8 @@ export class ArticleService {
     return this.http.post<Article>('/api/article', article);
   }
 
-  getArticle(articleid: string): Observable<Article> {
-    return this.http.get<Article>(`/api/article/${articleid}`);
+  getArticle(article: string): Observable<Article> {
+    return this.http.get<Article>(`/api/article/${article}`);
   }
 
   editArticle(article: Article): Observable<string> {

@@ -22,7 +22,7 @@ export class ArticlesAdminComponent implements OnInit {
   title = new FormControl('', Validators.required);
   picture = new FormControl('');
   text = new FormControl('', Validators.required);
-  author = new FormControl('', Validators.required);
+  author = new FormControl('');
   description = new FormControl('', Validators.required);
 
   filename: string;
@@ -50,9 +50,11 @@ export class ArticlesAdminComponent implements OnInit {
 
   getArticles() {
     this.articleService.getArticles().subscribe(
-      (data) => 
+      (data) => {
         this.articles = data,
-          // console.log("this articles", this.articles);
+        this.articles.reverse()
+          //  console.log("articles", this.articles);
+      },
       error => console.log(error),
       () => this.isLoading = false,
     );
@@ -60,6 +62,7 @@ export class ArticlesAdminComponent implements OnInit {
 
   addArticle() {
     this.addArticleForm.value.picture = this.filename,
+    this.addArticleForm.value.author = "Happy-Danse",
       this.articleService.addArticle(this.addArticleForm.value).subscribe(
         (res) => {
           this.articles.push(res);

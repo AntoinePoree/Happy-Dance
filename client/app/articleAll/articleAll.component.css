@@ -1,0 +1,12 @@
+.container-fluid {
+  margin-top: 56px;
+}
+
+.card-router {
+  cursor: pointer;
+}
+
+.rounded-circle {
+  max-height: 30vh;
+  min-height: 30vh
+}

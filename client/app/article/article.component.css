@@ -316,5 +316,7 @@ header.masthead p {
 }
 
 .img-fluid {
-  min-width: 100%
+  min-width: 100%;
+  max-height: stretch;
+  height: 333px;
 }

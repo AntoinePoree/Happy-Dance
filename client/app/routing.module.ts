@@ -10,6 +10,7 @@ import { AccountComponent } from './account/account.component';
 import { AdminComponent } from './admin/admin.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
+import { ArticleAllComponent } from './articleAll/articleAll.component';
 import { ArticleIDComponent } from './article_id/article_id.component';
 import { DanceIDComponent } from './dance_id/dance_id.component';
 import { UploadComponent } from './upload/upload.component';
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'équipe', component: StaffComponent },
   { path: 'agenda', component: AgendaComponent },
+  { path: 'actualite', component: ArticleAllComponent },
   { path: 'article/:id', component: ArticleIDComponent },
   { path: 'dance/:id', component: DanceIDComponent },
   { path: 'cats', component: CatsComponent },

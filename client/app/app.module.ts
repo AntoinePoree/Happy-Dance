@@ -29,6 +29,7 @@ import { ArticleComponent } from './article/article.component';
 import { ArticleIDComponent } from './article_id/article_id.component';
 import { DanceIDComponent } from './dance_id/dance_id.component';
 import { ArticlesAdminComponent } from './article_admin/article_admin.component';
+import { ArticleAllComponent } from './articleAll/articleAll.component';
 import { DancesAdminComponent } from './dance_admin/dance_admin.component';
 import { StaffComponent } from './staff/staff.component';
 import { StaffAdminComponent } from './staff_admin/staff_admin.component';
@@ -53,6 +54,7 @@ export function tokenGetter() {
     LoginComponent,
     LogoutComponent,
     AccountComponent,
+    ArticleAllComponent,
     AdminComponent,
     NotFoundComponent,
     HomeComponent,

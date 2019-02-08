@@ -16,6 +16,7 @@ export class ArticleIDComponent {
   article = new Article();
   id: any;
   picture;
+  newText;
   isLoading = true;
 
   constructor(private articleService: ArticleService,
@@ -31,7 +32,8 @@ export class ArticleIDComponent {
   getArticle() {
     this.articleService.getArticle(this.id).subscribe(
       data => {
-        this.article = data,
+        this.article = data,        
+          this.newText = this.article.text.replace(/\\n/g, "<br/>"),
           this.picture = "api/file/" + this.article.picture
       }
     );
