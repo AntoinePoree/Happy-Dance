@@ -23,8 +23,8 @@ export class DancesAdminComponent implements OnInit {
   picture1 = new FormControl('');
   picture2 = new FormControl('');
   picture3 = new FormControl('');
-  text = new FormControl('', Validators.required);
-  description = new FormControl('', Validators.required);
+  text = new FormControl('');
+  description = new FormControl('');
 
   filename1: string;
   filename2: string;
@@ -40,10 +40,9 @@ export class DancesAdminComponent implements OnInit {
     this.addDanceForm = this.formBuilder.group({
       name: this.name,
       picture1: this.picture1,
-      picture3: this.picture2,
-      pictur3e: this.picture3,
+      picture2: this.picture2,
+      picturE3: this.picture3,
       text: this.text,
-      // galerie: this.galerie,
       description: this.description,
     });
   }

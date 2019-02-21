@@ -8,11 +8,11 @@
   <div class="card-body">
     <form class="form-inline" [formGroup]="addDanceForm" (ngSubmit)="addDance()">
       <input class="form-control mr-2" type="text" name="name" formControlName="name" placeholder="Nom de la dance">
-      <app-upload class="upload" name="picture1" [callback]="onFileUploaded1"></app-upload>
-      <app-upload class="upload" name="picture2" [callback]="onFileUploaded2"></app-upload>
-      <app-upload class="upload" name="picture3" [callback]="onFileUploaded3"></app-upload>
-      <!-- <app-upload class="upload" name="galerie" formControlName="galerie" [callback]="onFileUploaded"></app-upload> -->
-
+      <div class="divUpload">
+        <app-upload class="upload" name="picture1" [callback]="onFileUploaded1"></app-upload>
+        <app-upload class="upload" name="picture2" [callback]="onFileUploaded2"></app-upload>
+        <app-upload class="upload" name="picture3" [callback]="onFileUploaded3"></app-upload>
+      </div>
       <textarea class="form-control mr-2" type="textarea" cols="40" rows="5" name="text" formControlName="text"
         placeholder="Texte à afficher"></textarea>
       <textarea class="form-control mr-2" type="textarea" cols="40" rows="5" name="description" formControlName="description"
@@ -47,9 +47,9 @@
           <tr *ngFor="let dance of dances">
             <td>{{ dance.name }}</td>
             <td>
-              <img class="imageUrl" src="api/file/{{ dance.picture1 }}" alt="Can't access">
-              <img class="imageUrl" src="api/file/{{ dance.picture2 }}" alt="Can't access">
-              <img class="imageUrl" src="api/file/{{ dance.picture3 }}" alt="Can't access">
+              <img class="imageUrl" src="api/file/{{ dance.picture1 }}" alt="Pas de photo">
+              <img class="imageUrl" src="api/file/{{ dance.picture2 }}" alt="Pas de photo">
+              <img class="imageUrl" src="api/file/{{ dance.picture3 }}" alt="Pas de photo">
             </td>
             <!-- <td>{{ dance.galerie.length }}</td> -->
             <td class="dance-text">{{ dance.text }}</td>
@@ -67,18 +67,17 @@
                 required>
             </td>
             <td>
-              <app-upload class="up col-12 col-md-5" [callback]="onFileUploaded"></app-upload>
+              <app-upload class="upload" name="picture1" [callback]="onFileUploaded1"></app-upload>
+              <app-upload class="upload" name="picture2" [callback]="onFileUploaded2"></app-upload>
+              <app-upload class="upload" name="picture3" [callback]="onFileUploaded3"></app-upload>
             </td>
-            <!-- <td>
-                <app-upload class="up col-12 col-md-5" name="galerie" [callback]="onFileUploaded"></app-upload>
-            </td> -->
             <td>
               <textarea class="form-control mr-2" type="textarea" cols="40" rows="5" name="text" [(ngModel)]="dance.text"
-                placeholder="Texte à afficher" required></textarea>
+                placeholder="Texte à afficher"></textarea>
             </td>
             <td>
               <textarea class="form-control mr-2" type="textarea" cols="40" rows="5" name="description" [(ngModel)]="dance.description"
-                placeholder="Texte 2 à afficher" required></textarea>
+                placeholder="Texte 2 à afficher"></textarea>
             </td>
             <td>
               <button class="btn btn-sm btn-primary mr-2" type="submit" [disabled]="!form.form.valid"><i class="fa fa-floppy-o"></i>

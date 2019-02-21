@@ -1,43 +1,99 @@
-<header *ngIf="picture1" class="masthead text-center text-white d-flex" [ngStyle]="{ 'background-image': 'url(' + picture1 + ')'}">
-  <div class="container my-auto">
-    <div class="row">
-      <div class="col-lg-10 mx-auto">
-        <h1 class="text-uppercase">
-          {{dance.name}}
-        </h1>
-        <hr>
-      </div>
+<app-loading [condition]="isLoading"></app-loading>
+
+<app-toast [message]="toast.message"></app-toast>
+
+<div class="container-fluid">
+
+  <!-- title -->
+  <div class="row justify-content-center" *ngIf="dance.name">
+    <div class="col-sm-6">
+      <h1 class="shadow mx-auto">{{ dance.name }}</h1>
     </div>
   </div>
-</header>
 
-<section class="p-0">
-  <div class="container my-auto" *ngIf="dance">
-    <div class="row text">
-      <p>
-        {{dance.text}}
+  <!-- Si tout les éléments sont remplis -->
+  <div class="row" *ngIf="dance.picture1 && dance.text">
+    <div class="col-sm-6" *ngIf="dance.picture1">
+      <img src="{{picture1}}">
+    </div>
+    <div class="col-sm-6" *ngIf="dance.text">
+      <p class="mx-auto text-center">
+        {{ firstText }}
       </p>
     </div>
-    <div class="col-sm-6" *ngIf="picture2">
-      <img src="{{picture2}}" alt="image indisponible">
-    </div>   <div class="col-sm-6" *ngIf="picture3">
-      <img src="{{picture3}}" alt="image indisponible">
-    </div>
-    <div class="row">
-        <h4>
-          {{dance.description}}
-        </h4>
+  </div>
+
+  <!-- Si la condition au dessus n'est pas remplie, je modifie l'agencement  -->
+  <div class="row" *ngIf="dance.picture1 && !dance.text">
+    <div class="col-sm-12" *ngIf="dance.picture1">
+      <img src="{{picture1}}">
     </div>
   </div>
-</section>
 
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-lg-3 col-md-5">
-      <a class="btn-location btn-dark btn-xl js-scroll-trigger" routerLink="/">Retour à l'accueil</a>
+  <div class="row" *ngIf="!dance.picture1 && dance.text">
+    <div class="col-sm-12" *ngIf="dance.text">
+      <p class="mx-auto text-center">
+        {{ firstText }}
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<!-- Image au centre -->
+<div class="container-fluid" *ngIf="dance.picture2">
+  <div class="row justify-content-center text">
+    <div class="col-sm-6 col-xs-12">
+      <img src="{{picture2}}">
     </div>
   </div>
 </div>
+
+<!-- Section 2 / Text - Image -->
+
+<div class="container">
+  <!-- Si tout les éléments sont remplis -->
+  <div class="row" *ngIf="dance.picture3 && dance.description">
+    <!-- Header / image - Text -->
+    <div class="col-sm-6" *ngIf="dance.description">
+      <p class="mx-auto text-center">
+        {{ secondText }}
+      </p>
+    </div>
+    <div class="col-sm-6" *ngIf="dance.picture3">
+      <img src="{{picture3}}">
+    </div>
+
+  </div>
+
+  <!-- Si la condition au dessus n'est pas remplie, je modifie l'agencement  -->
+  <div class="row" *ngIf="dance.picture3 && !dance.description">
+    <div class="col-sm-12" *ngIf="dance.picture3">
+      <img src="{{picture3}}">
+    </div>
+  </div>
+
+  <div class="row" *ngIf="!dance.picture3 && dance.description">
+    <div class="col-sm-12" *ngIf="dance.description">
+      <p class="mx-auto text-center">
+        {{ secondText }}
+      </p>
+    </div>
+  </div>
+
+
+</div>
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 btn-center">
+      <a class="btn-location btn-dark btn-xl js-scroll-trigger" onclick="self.close()">Retour à l'accueil</a>
+    </div>
+  </div>
+</div>
+
+<!-- Contact -->
 <hr>
 <section id="contact">
   <app-contact></app-contact>
