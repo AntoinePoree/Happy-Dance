@@ -1,4 +1,4 @@
-<header *ngIf="picture" class="masthead text-center text-white d-flex" [ngStyle]="{ 'background-image': 'url(' + picture + ')'}">
+<header *ngIf="picture1" class="masthead text-center text-white d-flex" [ngStyle]="{ 'background-image': 'url(' + picture1 + ')'}">
   <div class="container my-auto">
     <div class="row">
       <div class="col-lg-10 mx-auto">
@@ -17,6 +17,11 @@
       <p>
         {{dance.text}}
       </p>
+    </div>
+    <div class="col-sm-6" *ngIf="picture2">
+      <img src="{{picture2}}" alt="image indisponible">
+    </div>   <div class="col-sm-6" *ngIf="picture3">
+      <img src="{{picture3}}" alt="image indisponible">
     </div>
     <div class="row">
         <h4>

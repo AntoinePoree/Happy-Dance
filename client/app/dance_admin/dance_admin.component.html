@@ -8,7 +8,9 @@
   <div class="card-body">
     <form class="form-inline" [formGroup]="addDanceForm" (ngSubmit)="addDance()">
       <input class="form-control mr-2" type="text" name="name" formControlName="name" placeholder="Nom de la dance">
-      <app-upload class="upload" [callback]="onFileUploaded"></app-upload>
+      <app-upload class="upload" name="picture1" [callback]="onFileUploaded1"></app-upload>
+      <app-upload class="upload" name="picture2" [callback]="onFileUploaded2"></app-upload>
+      <app-upload class="upload" name="picture3" [callback]="onFileUploaded3"></app-upload>
       <!-- <app-upload class="upload" name="galerie" formControlName="galerie" [callback]="onFileUploaded"></app-upload> -->
 
       <textarea class="form-control mr-2" type="textarea" cols="40" rows="5" name="text" formControlName="text"
@@ -45,7 +47,9 @@
           <tr *ngFor="let dance of dances">
             <td>{{ dance.name }}</td>
             <td>
-              <img class="imageUrl" src="api/file/{{ dance.picture }}" alt="Can't access">
+              <img class="imageUrl" src="api/file/{{ dance.picture1 }}" alt="Can't access">
+              <img class="imageUrl" src="api/file/{{ dance.picture2 }}" alt="Can't access">
+              <img class="imageUrl" src="api/file/{{ dance.picture3 }}" alt="Can't access">
             </td>
             <!-- <td>{{ dance.galerie.length }}</td> -->
             <td class="dance-text">{{ dance.text }}</td>

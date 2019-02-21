@@ -32,5 +32,4 @@ export class DanceService {
   deleteDance(dance: Dance): Observable<string> {
     return this.http.delete(`/api/dance/${dance._id}`, { responseType: 'text' });
   }
-
 }

@@ -15,7 +15,9 @@ export class DanceIDComponent {
 
   dance = new Dance();
   id: any;
-  picture;
+  picture1;
+  picture2;
+  picture3;
   galerie;
   isLoading = true;
 
@@ -33,7 +35,9 @@ export class DanceIDComponent {
     this.danceService.getDance(this.id).subscribe(
       data => {
         this.dance = data,
-          this.picture = "api/file/" + this.dance.picture
+        this.picture1 = "api/file/" + this.dance.picture1
+        this.picture2 = "api/file/" + this.dance.picture2
+        this.picture3 = "api/file/" + this.dance.picture3
       }
     );
   }

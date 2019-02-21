@@ -2,8 +2,9 @@ import * as mongoose from 'mongoose';
 
 const danceSchema = new mongoose.Schema({
   name: String,
-  picture: String,
-  galerie: Array,
+  picture1: String,
+  picture2: String,
+  picture3: String,
   text: String,
   description: String,
   created_at: String,

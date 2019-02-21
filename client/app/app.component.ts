@@ -8,11 +8,13 @@ import { AuthService } from './services/auth.service';
 export class AppComponent implements AfterViewChecked {
 
   constructor(public auth: AuthService,
-              private changeDetector: ChangeDetectorRef) { }
+    private changeDetector: ChangeDetectorRef) { }
 
   // This fixes: https://github.com/DavideViolante/Angular-Full-Stack/issues/105
   ngAfterViewChecked() {
     this.changeDetector.detectChanges();
   }
-
+  onActivate(event) {
+    window.scroll(0, 0);
+  }
 }
