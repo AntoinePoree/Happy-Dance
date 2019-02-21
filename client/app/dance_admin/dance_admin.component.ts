@@ -39,6 +39,7 @@ export class DancesAdminComponent implements OnInit {
     this.getDances();
     this.addDanceForm = this.formBuilder.group({
       name: this.name,
+      invisible: false,
       picture1: this.picture1,
       picture2: this.picture2,
       picturE3: this.picture3,
@@ -62,9 +63,10 @@ export class DancesAdminComponent implements OnInit {
 
   getDances() {
     this.danceService.getDances().subscribe(
-      (data) =>
+      (data) => {
         this.dances = data,
-      // console.log("this dances", this.dances)},
+          console.log("this dances", this.dances)
+      },
       error => console.log(error),
       () => this.isLoading = false,
     );
@@ -123,5 +125,26 @@ export class DancesAdminComponent implements OnInit {
         error => console.log("error", error),
       );
     }
+  }
+
+  makeInvisible(dance: Dance) {
+    if (dance.invisible === true) {
+      dance.invisible = false;
+    } else if (dance.invisible === false) {
+      dance.invisible = true;
+    }
+    this.danceService.editDance(dance).subscribe(
+      () => {
+        this.isEditing = false;
+        this.dance = dance;
+        if (dance.invisible === true) {
+          this.toast.setMessage('item Hide successfully. Recharger la page', 'success');
+        } else if (dance.invisible === false) {
+          this.toast.setMessage('item Show successfully. Recharger la page', 'success');
+        }
+      },
+      error => console.log("error", error),
+    );
+
   }
 }

@@ -35,6 +35,7 @@
             <!-- <th scope="col">Galerie</th> -->
             <th scope="col">Texte</th>
             <th scope="col">Texte 2</th>
+            <th scope="col">Invisible</th>
             <th scope="col">Actions</th>
           </tr>
         </thead>
@@ -54,8 +55,10 @@
             <!-- <td>{{ dance.galerie.length }}</td> -->
             <td class="dance-text">{{ dance.text }}</td>
             <td class="dance-text">{{ dance.description }}</td>
+            <td class="dance-text">{{ dance.invisible }}</td>
             <td>
               <button class="btn btn-sm btn-primary" (click)="enableEditing(dance)"><i class="fa fa-pencil"></i> Edit</button>
+              <button class="btn btn-sm btn-secondary" (click)="makeInvisible(dance)"><i class="fas fa-user-secret"></i></button>
               <button class="btn btn-sm btn-danger" (click)="deleteDance(dance)"><i class="fa fa-trash"></i> Delete</button>
             </td>
           </tr>
@@ -82,6 +85,7 @@
             <td>
               <button class="btn btn-sm btn-primary mr-2" type="submit" [disabled]="!form.form.valid"><i class="fa fa-floppy-o"></i>
                 Save</button>
+
               <button class="btn btn-sm btn-warning" (click)="cancelEditing()"><i class="fa fa-times"></i> Cancel</button>
             </td>
           </tr>

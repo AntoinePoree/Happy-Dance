@@ -91,8 +91,8 @@
             aria-expanded="false">
             Nos Danses
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" *ngFor="let dance of dances" routerLink="dance/{{ dance._id }}" target="_blank">
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
+            <a class="dropdown-item" *ngFor="let dance of danceArr" routerLink="dance/{{ dance.id }}" target="_blank">
               {{ dance.name }}</a>
           </div>
         </li>

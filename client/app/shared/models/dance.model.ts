@@ -6,5 +6,6 @@ export class Dance {
   picture3: String;
   text: String;
   description: String;
+  invisible: Boolean;
   created_at: String;
 }
