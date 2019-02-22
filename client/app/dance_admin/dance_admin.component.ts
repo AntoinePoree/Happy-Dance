@@ -128,7 +128,10 @@ export class DancesAdminComponent implements OnInit {
   }
 
   makeInvisible(dance: Dance) {
-    if (dance.invisible === true) {
+    if (!dance.invisible) {
+      dance.invisible = false
+    }
+    else if (dance.invisible === true) {
       dance.invisible = false;
     } else if (dance.invisible === false) {
       dance.invisible = true;
