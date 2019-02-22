@@ -44,12 +44,12 @@ export default class UploadController extends BaseController {
         const datetimestamp = Date.now();
         cb(
           null,
-          file.fieldname +
+          `${file.fieldname} +
             '-' +
-            datetimestamp +
+            ${datetimestamp} +
             '.' +
-            file.originalname.split('.')
-            [file.originalname.split('.').length - 1],
+            ${file.originalname.split('.')}
+            ${[file.originalname.split('.').length - 1]}`,
         );
       },
       /** With gridfs we can store aditional meta-data along with the file */
