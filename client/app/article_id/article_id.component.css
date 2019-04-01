@@ -17,7 +17,8 @@ img {
 
 @media (min-width: 550px) {
   .text-uppercase {
-    line-height: 331px;
+    position: absolute;
+    top: 11vh;
     height: 331px;
   }
 }

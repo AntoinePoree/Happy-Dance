@@ -54,7 +54,7 @@ section {
 }
 
 .section-heading {
-  margin-top: 0;
+  margin-top: 2vh;
 }
 
 ::-moz-selection {
@@ -67,4 +67,13 @@ section {
   color: #fff;
   background: #212529;
   text-shadow: none;
+}
+
+.imagelogo{
+  max-width: 20%;
+  max-height: 20%;
+  min-height: 20%;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 2vh;
 }
